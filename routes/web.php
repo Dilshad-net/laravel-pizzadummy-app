@@ -22,8 +22,14 @@ Route::get('/', function () {
 
 Route::get('/pizzas', [PizzaController::class, 'index']);
 
+Route::get('/pizzas/create', [PizzaController::class, 'create']);
+
+Route::post('/pizzas', [PizzaController::class, 'store']);
+
 // 'PizzaController@show'
 
 Route::get('/pizzas/{id}', [PizzaController::class, 'show']
     // use the id to query / fetch data from db
 );
+
+Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy']);
